@@ -1,0 +1,50 @@
+.header {
+    background-color: red;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Ensure that items are stacked at the top */
+    align-items: stretch; /* Stretch child elements to full width */
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/* Main navigation styles */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the list horizontally */
+    width: 100%;
+}
+
+.navbarList {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbarList li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.navbarList li a:hover {
+    text-decoration: underline;
+}
+
+/* Icon navigation styles */
+.navbarIconList {
+    display: flex;
+    margin-left: auto;
+    flex-direction: column; /* Align items horizontally */
+    justify-content: flex-end; /* Push items to the right */
+    align-items: center; /* Vertically center items */
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure it stretches across */
+}
