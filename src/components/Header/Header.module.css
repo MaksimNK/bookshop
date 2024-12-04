@@ -1,18 +1,17 @@
 .header {
-    background-color: red;
+    background-color: transparent;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Ensure that items are stacked at the top */
-    align-items: stretch; /* Stretch child elements to full width */
-    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 10px 20px;
+    width: 100%;
+    z-index: 999;
 }
 
-/* Main navigation styles */
 .navbar {
     display: flex;
-    justify-content: center; /* Center the list horizontally */
-    width: 100%;
+    justify-content: flex-start;
+    width: auto;
 }
 
 .navbarList {
@@ -21,12 +20,13 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%;
+    margin-left: 50px;
+    gap: 300px;
 }
 
 .navbarList li a {
     text-decoration: none;
-    color: white;
+    color: #2D5050;
     font-weight: bold;
     font-size: 1rem;
 }
@@ -35,16 +35,38 @@
     text-decoration: underline;
 }
 
-/* Icon navigation styles */
 .navbarIconList {
     display: flex;
-    margin-left: auto;
-    flex-direction: column; /* Align items horizontally */
-    justify-content: flex-end; /* Push items to the right */
-    align-items: center; /* Vertically center items */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
     gap: 15px;
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%; /* Ensure it stretches across */
+    height: 100%;
 }
+
+.navbarIconList li a {
+    text-decoration: none;
+    color: #2D5050;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.navbarIconList li a:hover {
+    text-decoration: underline;
+}
+
+.iconButton {
+    margin: 0;
+    color: #2D5050;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
