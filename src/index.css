@@ -1,11 +1,16 @@
 *{
   margin: 0;
   box-sizing: border-box;
+  font-family: Judson;
+  font-size: 25px;
 }
+
 
 body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(/public/image/background.png);
+  background-color: #333;
 }
