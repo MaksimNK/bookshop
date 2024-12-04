@@ -1,12 +1,4 @@
-.name {
-    font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, #6CB4B9, #479C9F, #2C4D4D);
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
 .image {
-    width: 58px;
-    height: 45,5px;
+    width: 50%;
+    height: auto;
 }
