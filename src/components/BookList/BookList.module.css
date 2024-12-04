@@ -1,6 +1,11 @@
-.booklist {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
+.bookList {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to new rows if needed */
+    justify-content: space-between; /* Even spacing between items */
+    gap: 100px; /* Spacing between items */
     padding: 16px;
+    list-style: none;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
