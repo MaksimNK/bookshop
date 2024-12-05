@@ -14,6 +14,10 @@ export const HomePage = (props) => {
         { id: 2, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15 Br" },
         { id: 3, image: "/image/home/header.png", title: "Эмма", author: "Джейн Остин", price: "10 Br" },
         { id: 4, image: "/image/home/header.png", title: "Рассказ служанки", author: "Маргарет Этвуд", price: "25 Br" },
+        { id: 1, image: "/image/home/header.png", title: "На маяк", author: "Вирджиния Вулф", price: "15 Br" },
+        { id: 2, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15 Br" },
+        { id: 3, image: "/image/home/header.png", title: "Эмма", author: "Джейн Остин", price: "10 Br" },
+        { id: 4, image: "/image/home/header.png", title: "Рассказ служанки", author: "Маргарет Этвуд", price: "25 Br" },
     ];
 
     return (
