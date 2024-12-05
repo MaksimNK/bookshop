@@ -1,0 +1,90 @@
+.register {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-image: url('/public/image/background.png');
+    padding: 10px;
+    background-color: #6CB4B9;
+    border-radius: 30px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .inputGroup {
+    margin-bottom: 1rem;
+  }
+  
+  .inputGroupContainer {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    color: #082734;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .button {
+    padding: 0.7rem;
+    width: 100%;
+    background-color: #0000007e;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .button:hover {
+    background-color: #000000;
+  }
+  
+  .socialLogin {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .socialButton {
+    padding: 0.7rem 1.5rem;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .socialButton:hover {
+    background-color: #3367d6;
+  }
+  
+  .socialButton:nth-child(2) {
+    background-color: #3b5998;
+  }
+  
+  .socialButton:nth-child(2):hover {
+    background-color: #2d4373;
+  }
+  
