@@ -74,3 +74,12 @@ Below is an example of the JSON format used for book entries in the API:
 http://localhost:5000/api.
 ```
 
+![Screenshot Swagger](./public/Swagger.png)
+
+
+
+## REACT
+![Screenshot](./public/image/React.png)
+
+
+
