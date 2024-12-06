@@ -79,11 +79,13 @@
 
 .about {
     background-color: #DCA6BD80;
-    border-radius: 8px;
+    border-radius: 50px;
     padding: 20px;
     margin-top: 30px;
     width: 100%;
+    height: fit-content;
     max-width: 800px;
+    max-height: 800x;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;

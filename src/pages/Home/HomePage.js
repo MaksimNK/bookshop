@@ -1,32 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { BookListSwiper } from "../../components/BookListSwiper/BookListSwiper";
 import styles from './Home.module.css';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchLastestBook } from "../../features/book/bookSlice";
+import {AuthorList} from '../../components/AuthorList/AuthorList'
+
 
 export const HomePage = (props) => {
 
     const navigate = useNavigate();
-
-    const books = [
-        { id: 1, image: "/image/home/header.png", title: "На маяк", author: "Вирджиния Вулф", price: "15 Br" },
-        { id: 2, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15 Br" },
-        { id: 3, image: "/image/home/header.png", title: "Эмма", author: "Джейн Остин", price: "10 Br" },
-        { id: 4, image: "/image/home/header.png", title: "Рассказ служанки", author: "Маргарет Этвуд", price: "25 Br" },
-        { id: 5, image: "/image/home/header.png", title: "На маяк", author: "Вирджиния Вулф", price: "15 Br" },
-        { id: 6, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15 Br" },
-        { id: 7, image: "/image/home/header.png", title: "Эмма", author: "Джейн Остин", price: "10 Br" },
-        { id: 8, image: "/image/home/header.png", title: "Рассказ служанки", author: "Маргарет Этвуд", price: "25 Br" },
-    ];
+    const dispatch = useDispatch();
+    const { books }  = useSelector((state) => state.books);
+    useEffect(() => {
+        dispatch(fetchLastestBook());
+    },[dispatch])
     
     const onBtnClick = () => {
         navigate('/catalog');
-        console.log(123);
     }
 
+
+const authors = [
+    { id: 1, image: "/image/artist.png", name: "Вирджиния Вулф" },
+    { id: 2, image: "/image/artist.png", name: "Маргарет Этвуд" },
+    { id: 3, image: "/image/artist.png", name: "Шарлотта Бронте" },
+    { id: 4, image: "/image/artist.png", name: "Рассказ служанки" },
+];
+
     return (
-       <div>
+       <div className={styles.home}>
             <Header  style={{ position: 'relative', zIndex: 100 }} />
             <div className={styles.hero}>
                 <img src="image/home/header.png" className={styles.image} alt="header" />
@@ -39,6 +44,12 @@ export const HomePage = (props) => {
             <div className={styles.spacer}></div>
             <h2>Новинки</h2>
             <BookListSwiper books={books} />
+            <h2>Наши вдохновительницы</h2>
+            <div className={styles.section}>
+                <h4 className={styles.sectionTitle}>Авторы</h4>
+                <AuthorList authors={authors} />
+            </div>
+
             <Footer />
        </div>
     );

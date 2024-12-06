@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BookList } from "../../components/BookList/BookList";
 import { fetchBooksPublishing } from "../../features/book/bookSlice";
 import { Header } from "../../components/Header/Header";
@@ -10,6 +10,7 @@ import styles from './PublishingPage.module.css';
 export const PublishingPage = (props) => {
     const { publishing } = useParams();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { books, status, error } = useSelector((state) => state.books);
 
@@ -19,7 +20,7 @@ export const PublishingPage = (props) => {
     }, [publishing, dispatch]);
 
     if (status === 'loading') return <p className={styles.loading}>Loading books...</p>;
-    if (status === 'failed') return <p className={styles.error}>Error: {error}</p>;
+    if (status === 'failed') navigate('/page-not-found');
 
     return (
         <>
