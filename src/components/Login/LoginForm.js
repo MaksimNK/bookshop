@@ -25,7 +25,7 @@ export const LoginForm = ({ onSubmit, toggleForm }) => {
   }, [status, user]);
 
   return (
-    <form onSubmit={handleLoginSubmit} className={styles.form}>
+    <form onSubmit={handleLoginSubmit} className={styles.login}>
       <h2 className={styles.title}>Вход</h2>
 
       <div className={styles.inputGroupContainer}>
