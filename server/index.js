@@ -6,6 +6,8 @@ import categoryRoutes from './routes/categoryRoutes.js'
 import autorRoutes from './routes/autorRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import cors from 'cors'
+import swaggerUi from 'swagger-ui-express';
+import {setupSwagger} from './util/swagger.js';
 
 const corsOptions = {
     origin: 'http://localhost:3000',
@@ -14,21 +16,18 @@ const corsOptions = {
 
 const app = express();
 
+setupSwagger(app);
+
 app.use(cors(corsOptions));
 
 app.use(express.json());
 
 app.use('/users', userRoutes);
 app.use('/books', bookRoutes);
-app.use('/author', autorRoutes);
-app.use('/category', categoryRoutes);
+//app.use('/author', autorRoutes);
 app.use('/auth', authRoutes);
 
 
-
-app.get('/', (req, res) => {
-    res.status(201).json('Hello world');
-});
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
