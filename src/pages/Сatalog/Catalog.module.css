@@ -1,0 +1,30 @@
+.pageTitle {
+    padding: 16px;
+    margin: 0 0 16px 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: #2C4D4D;
+}
+
+.section {
+    margin: 24px auto;
+    padding: 16px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+
+.sectionTitle {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2C4D4D;
+}
+
+.catalogList,
+.authorList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16px;
+}

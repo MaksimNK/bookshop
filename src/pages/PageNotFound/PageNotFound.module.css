@@ -1,0 +1,23 @@
+.pageNotFound {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pageNotFound h1 {
+    font-size: 3rem;
+    color: #2D5050;
+    margin-bottom: 20px;
+}
+
+.pageNotFound p {
+    font-size: 1.25rem;
+    color: #2D5050;
+    margin-bottom: 30px;
+}
+
+.pageNotFound footer {
+    margin-top: auto;
+}

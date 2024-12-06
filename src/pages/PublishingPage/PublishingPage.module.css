@@ -1,0 +1,30 @@
+.publishingPage {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 200px);
+}
+
+.publishingPage h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bookListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loading {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.error {
+    font-size: 1.5rem;
+    color: red;
+}
