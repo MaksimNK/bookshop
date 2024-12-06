@@ -26,6 +26,18 @@ export const fetchBooksCategory = createAsyncThunk(
   }
 );
 
+export const fetchLastestBook = createAsyncThunk(
+  'books/fetchLastestBook', 
+  async(_, {rejectWithValue}) => {
+    try {
+      const response = await axios.get(`${API_URL}/lastes`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const fetchBooksPublishing = createAsyncThunk(
   'books/fetchBooksByPublishing', 
   async (publishing, { rejectWithValue }) => {
@@ -156,7 +168,16 @@ const booksSlice = createSlice({
       .addCase(fetchBooksPublishing.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.error.message || "An unexpected error occurred";
-      });
+      })
+      .addCase(fetchLastestBook.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.books = action.payload;
+      })
+      .addCase(fetchLastestBook.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message || "An unexpected error occurred";
+      })
+      ;
 
   
   },
