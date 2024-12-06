@@ -4,7 +4,19 @@ import styles from './CatalogItem.module.css';
 
 export const CatalogItem = ({item, color, type}) => {
 
-    const linkPath = type === 'category' ? `/category/${item.category}` : `/publishing/${item.publishing}`;
+
+
+    const linkPath = 
+        type === 'category' && item.category 
+            ? `/category/${item.category}` 
+            : type === 'publishing' && item.publishing 
+            ? `/publishing/${item.publishing}` 
+            : '#';
+
+    if (!item.category && !item.publishing) {
+        console.warn("Item is missing a required property:", item);
+    }
+
 
     return (
         <Link to={linkPath} className={styles.link}>

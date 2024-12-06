@@ -1,8 +1,8 @@
 .bookList {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping to new rows if needed */
-    justify-content: space-between; /* Even spacing between items */
-    gap: 100px; /* Spacing between items */
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 100px;
     padding: 16px;
     list-style: none;
     background-color: #f9f9f9;
