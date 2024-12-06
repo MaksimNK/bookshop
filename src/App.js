@@ -12,8 +12,14 @@ import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
 import { BasketPage } from './pages/BasketPage/BasketPage';
 import { ProfilePage } from './pages/ProfilePage/ProfilePage';
 import { SearchPage } from './pages/SearchPage/SearchPage';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    localStorage.clear();
+  }, [])
+
   return (
     <div className="App">
       <Routes>
