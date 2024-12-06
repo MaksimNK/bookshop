@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Book Details Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application for browsing detailed information about books. Users can view book details, including author, series, publishing information, and more, along with a description of the book.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Responsive UI for viewing book details.
+- Displays information such as title, author, ISBN, cover type, and more.
+- Modern design with React and CSS modules.
+- Backend API integration for dynamic book data.
+- Supports structured JSON data for book entries.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js and npm installed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Clone the Repository
 
-### `npm run build`
+```bash
+git clone https://github.com/your-username/book-details-app.git
+cd bookshop
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the Application
+### Start the Client
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run the React client in development mode:
+```
+npm start
+```
+Access the app at http://localhost:3000.
 
-### `npm run eject`
+### Start the Client
+Navigate to the server directory and run:
+```
+cd server
+npm run dev
+```
+Access the app at http://localhost:5000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Data Example
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Below is an example of the JSON format used for book entries in the API:
+```
+{
+  "title": "На маяк",
+  "author": "Вирджиния Вулф",
+  "series": "Магистраль. Главный тренд.",
+  "publishing": "magistr",
+  "image": "/image/home/header.png",
+  "isbn": "978-5-04-198784-8",
+  "ageLimit": "16+",
+  "originalTitle": "The Awakening",
+  "coverType": "Мягкая обложка",
+  "pages": 256,
+  "weight": "0 кг",
+  "thickness": "15 мм",
+  "format": "125x200 мм",
+  "paperMaterial": "Бумага офсетная пухлая",
+  "readingTime": "12 часов 48 минут",
+  "description": "На маяк — книга категорически необычная. Два дня, разделенные десятилетним промежутком времени...",
+  "category": "artistic"
+}
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Swagger API
+```
+http://localhost:5000/api.
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
