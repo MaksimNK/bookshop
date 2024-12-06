@@ -14,6 +14,16 @@ router.post('/', (req, res) => {
 });
 
 
+router.get('/lastes', (req, res) => {
+  try {
+    const books = bookService.getLastes();
+    res.status(201).json(books);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+})
+
+
 
 router.get('/', (req, res) => {
   const { category, publishing } = req.query; 
