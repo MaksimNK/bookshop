@@ -63,6 +63,12 @@ class BookService {
     }
     this.books.delete(bookId);
   }
+
+  getLastes(){
+    const books = Array.from(this.books.values()).reverse();
+    return books.slice(0, 10);
+  }
+
 }
 
 export default BookService;
@@ -111,7 +117,7 @@ export default BookService;
   "paperMaterial": "Бумага офсетная пухлая",
   "readingTime": "12 часов 48 минут",
   "description": "На маяк — книга категорически необычная. Два дня, разделенные десятилетним промежутком времени...",
-  "category": "artistic "
+  "category": "artistic"
 }
 
 
