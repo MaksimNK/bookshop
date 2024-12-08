@@ -26,7 +26,7 @@ class BookService {
     const allBooks = Array.from(this.books.values());
     if (title) {
       return allBooks.filter((book) =>
-        book.title.toLowerCase().includes(title.toLowerCase())
+        book.title && book.title.toLowerCase().includes(title.toLowerCase())
       );
     }
     return null;

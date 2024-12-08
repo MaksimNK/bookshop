@@ -13,10 +13,10 @@ export const CatalogPage = () => {
     ];
 
     const category = [
-        { id: 1, image: "/image/home/catalog.png", title: "Художественная литература", category: "artistic" },
-        { id: 2, image: "/image/home/header.png", title: "Биографии и мемуары", category: "художественная литература" },
-        { id: 3, image: "/image/home/header.png", title: "Детская литература" },
-        { id: 4, image: "/image/home/header.png", title: "Рассказ служанки" },
+        { id: 1, image: "/image/category/1.png", title: "Художественная литература", category: "художественная литература" },
+        { id: 2, image: "/image/category/2.png", title: "Биографии и мемуары", category: "Биографии и мемуары" },
+        { id: 3, image:  "/image/category/3.png", title: "Детская литература", category: "Детская литература" },
+        { id: 4, image:  "/image/category/3.png", title: "Рассказ служанки", category: "Детская литература" }
     ];
 
     const publishing = [
@@ -27,11 +27,14 @@ export const CatalogPage = () => {
     ];
 
     const authors = [
-        { id: 1, image: "/image/artist.png", name: "Вирджиния Вулф" },
-        { id: 2, image: "/image/artist.png", name: "Маргарет Этвуд" },
-        { id: 3, image: "/image/artist.png", name: "Шарлотта Бронте" },
-        { id: 4, image: "/image/artist.png", name: "Рассказ служанки" },
+        { id: 1, image: "/image/authors/1.png", name: "Вирджиния Вулф" },
+        { id: 2, image: "/image/authors/2.png", name: "Маргарет Этвуд" },
+        { id: 3, image: "/image/authors/3.png", name: "Шарлотта Бронте" },
+        { id: 4, image: "/image/authors/1.png", name: "Вирджиния Вулф" },
+        { id: 5, image: "/image/authors/2.png", name: "Маргарет Этвуд" },
+        { id: 6, image: "/image/authors/3.png", name: "Шарлотта Бронте" },
     ];
+
 
     return (
         <div>

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterForm.module.css";
 import { useDispatch } from "react-redux";
-
+import { useSelector } from "react-redux";
 import { register } from "../../features/auth/authslice";
 
 export const RegisterForm = (props) => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  const { status, user } = useSelector((state) => state.auth);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -19,6 +21,7 @@ export const RegisterForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(register({ name: firstName, surname: lastName, email, password }));
+    
   };
 
   useEffect(() => {
@@ -28,6 +31,12 @@ export const RegisterForm = (props) => {
       document.body.style.backgroundImage = "";
     };
   }, []);
+
+  useEffect(()=> {
+    if(status === 'succeeded') {
+      navigate('/')
+    }
+  }, [status])
 
   return (
     <div className={styles.register}>
