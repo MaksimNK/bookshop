@@ -40,32 +40,41 @@ export const BookDetailsPage = () => {
             
             <div className={styles.bookMain}>
                 <div className={styles.bookCover}>
-                    <img src="/image/artist.png" alt="Book cover" />
+                    <img src={book.image} alt="Book cover" />
                 </div>
 
-                <div className={styles.bookDetails}>
+                <div className={styles.bookDetailsCover}>
+                    <h3>Характеристики</h3>
+                    <div className={styles.bookDetails}>
                     <ul className={styles.detailsList}>
-                        <li><strong>Series:</strong> {book.series}</li>
-                        <li><strong>Publisher:</strong> {book.publisher}</li>
-                        <li><strong>ISBN:</strong> {book.isbn}</li>
-                        <li><strong>Age Limit:</strong> {book.ageLimit}</li>
-                        <li><strong>Original Title:</strong> {book.originalTitle}</li>
-                        <li><strong>Cover Type:</strong> {book.coverType}</li>
-                        <li><strong>Pages:</strong> {book.pages}</li>
-                        <li><strong>Weight:</strong> {book.weight}</li>
-                        <li><strong>Thickness:</strong> {book.thickness}</li>
-                        <li><strong>Format:</strong> {book.format}</li>
-                        <li><strong>Paper Material:</strong> {book.paperMaterial}</li>
-                        <li><strong>Reading Time:</strong> {book.readingTime}</li>
+                        <li>Серия: {book.series}</li>
+                        <li>Издательство: {book.publisher}</li>
+                        <li>ISBN: {book.isbn}</li>
+                        <li>Age Limit: {book.ageLimit}</li>
+                        <li>Название на языке оригинала: {book.originalTitle}</li>
+                        <li>Обложка: {book.coverType}</li>
                     </ul>
+                    <ul className={styles.detailsList}>
+                        <li>Кол-во страниц: {book.pages}</li>
+                        <li>Вес: {book.weight}</li>
+                        <li>Толщина: {book.thickness}</li>
+                        <li>Формат:{book.format}</li>
+                        <li>Материал бумаги:{book.paperMaterial}</li>
+                        <li>Время прочтения: {book.readingTime}</li>
+                    </ul>
+                    </div>
                 </div>
             </div>
          </div>
 
+
+        <div className={styles.aboutCover}>
             <div className={styles.about}>
                 <h2>О книге</h2>
                 <p className={styles.description}>{book.description}</p>
             </div>
+            <img src="/image/bookItemDetail/1.png"></img>
+        </div>
         </div>
         <Footer />
         </>

@@ -4,12 +4,13 @@ import { Footer } from "../../components/Footer/Footer";
 
 import styles from './About.module.css';
 import { BookListSwiper } from "../../components/BookListSwiper/BookListSwiper";
+import {BookList} from '../../components/BookList/BookList'
 
 export const AboutPage = () => {
 
     const books = [
-        { id: 1, image: "/image/home/header.png", title: "На маяк", author: "Вирджиния Вулф", price: "15 Br" },
-        { id: 2, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15 Br" },
+        { id: 1, image: "/image/home/header.png", title: "На маяк", author: "Вирджиния Вулф", price: "15" },
+        { id: 2, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15" },
     ];
 
     return (
@@ -57,7 +58,7 @@ export const AboutPage = () => {
                 </div>
                 <div className={styles.recomendation}>
                     <h2>Наши рекомендации</h2>
-                    <BookListSwiper books={books} className={styles.books}/>
+                    <BookList books={books} className={styles.books}/>
                 </div>
             </div>
             <Footer />
