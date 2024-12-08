@@ -23,12 +23,11 @@ export const HomePage = (props) => {
     }
 
 
-const authors = [
-    { id: 1, image: "/image/artist.png", name: "Вирджиния Вулф" },
-    { id: 2, image: "/image/artist.png", name: "Маргарет Этвуд" },
-    { id: 3, image: "/image/artist.png", name: "Шарлотта Бронте" },
-    { id: 4, image: "/image/artist.png", name: "Рассказ служанки" },
-];
+    const authors = [
+        { id: 1, image: "/image/authors/1.png", name: "Вирджиния Вулф", years: "1882-1941" },
+        { id: 2, image: "/image/authors/2.png", name: "Маргарет Этвуд", years: "1939" },
+        { id: 3, image: "/image/authors/3.png", name: "Шарлотта Бронте", years: "1816-1855" },
+    ];
 
     return (
        <div className={styles.home}>
@@ -42,14 +41,22 @@ const authors = [
                 </div>
             </div>
             <div className={styles.spacer}></div>
+            <h2>Наши вдохновительницы</h2>
+            <div className={styles.authorsGrid}>
+                {authors.map((author) => (
+                    <div key={author.id} className={styles.authorBlock}>
+                        <img
+                            src={author.image}
+                            alt={author.name}
+                            className={styles.authorImage}
+                        />
+                        <p className={styles.authorName}>{author.name}</p>
+                        <p className={styles.authorName}>{author.years}</p>
+                    </div>
+                ))}
+            </div>
             <h2>Новинки</h2>
             <BookListSwiper books={books} />
-            <h2>Наши вдохновительницы</h2>
-            <div className={styles.section}>
-                <h4 className={styles.sectionTitle}>Авторы</h4>
-                <AuthorList authors={authors} />
-            </div>
-
             <Footer />
        </div>
     );
