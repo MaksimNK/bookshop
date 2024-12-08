@@ -1,4 +1,3 @@
-/* Page Title Style */
 .pageTitle {
     text-align: center;
     margin: 32px auto 48px auto;
@@ -9,45 +8,48 @@
     max-width: 1200px;
 }
 
-/* Hero Section Style */
 .hero {
-    max-width: 1200px; /* Reduced max-width for better readability */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 30px;
+    padding: 50px;
     background-color: #D9D9D9;
     margin-bottom: 100px;
     border-radius: 30px;
-    text-align: left;
+}
+.inside {
+    padding: 50px 100px 100px 100px;
 }
 
 .hero h3 {
     color: #2C4D4D;
     font-size: 32px;
     font-weight: 600;
-    margin-bottom: 24px; /* Adds space below the heading */
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 .hero h4 {
     font-size: 22px;
     font-weight: 600;
     color: black;
-    margin-bottom: 8px; /* Adds space below each subheading */
+    margin-bottom: 8px;
 }
 
 .hero ul {
-    list-style-type: disc; /* Add disc style for list items */
-    padding-left: 20px; /* Indent the list for better alignment */
+    list-style-type: none;
+    padding-left: 20px;
 }
 
 .hero li {
-    margin-bottom: 16px; /* Space between list items */
+    margin-bottom: 16px;
 }
 
 .hero p {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: normal;
-    line-height: 1.6; /* Improve readability */
-    margin-bottom: 16px; /* Add space after each paragraph */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .hero a {
@@ -57,4 +59,11 @@
 
 .hero a:hover {
     text-decoration: underline;
+}
+.hero img {
+    display: block; 
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 40%;
+    border-radius: 10px
 }
