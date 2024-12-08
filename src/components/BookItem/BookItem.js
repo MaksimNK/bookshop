@@ -30,7 +30,7 @@ export const BookItem = ({ book, isEven }) => {
         <img src={book.image} alt={book.title} className={styles.image} />
         <h3 className={styles.title}>{book.title}</h3>
         <h4 className={styles.author}>{book.author}</h4>
-        <p className={styles.price}>{book.price}</p>
+        <p className={styles.price}>{book.price} Br</p>
       </div>
       <div className={styles.buttoncontainer}>
         <button
