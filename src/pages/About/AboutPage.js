@@ -9,8 +9,8 @@ import {BookList} from '../../components/BookList/BookList'
 export const AboutPage = () => {
 
     const books = [
-        { id: 1, image: "/image/home/header.png", title: "На маяк", author: "Вирджиния Вулф", price: "15" },
-        { id: 2, image: "/image/home/header.png", title: "Пробуждение", author: "Кейт Шопен", price: "15" },
+        { id: 1, image: "/image/books/1.jpg", title: "На маяк", author: "Вирджиния Вулф", price: "15" },
+        { id: 4, image: "/image/books/4.jpg", title: "Пробуждение", author: "Кейт Шопен", price: "40" },
     ];
 
     return (

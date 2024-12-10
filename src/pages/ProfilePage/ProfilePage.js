@@ -5,6 +5,8 @@ import styles from './ProfilePage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '../../components/UI/Modal/Modal';
 import { AuthPage } from '../Auth/AuthPage';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../features/auth/authslice';
 
 export const ProfilePage = ({ onLogout }) => {
 
@@ -19,6 +21,8 @@ export const ProfilePage = ({ onLogout }) => {
 
     const navigate = useNavigate();
 
+    const dispath = useDispatch();
+
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem('user'));
         if (storedUser) {
@@ -30,8 +34,7 @@ export const ProfilePage = ({ onLogout }) => {
 
 
     const handleLogout = () => {
-        localStorage.removeItem('user');
-        localStorage.removeItem('token');
+        dispath(logout());
         navigate('/');
     };
 
