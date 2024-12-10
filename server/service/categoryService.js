@@ -1,41 +1,39 @@
-import { v4 as uuidv4 } from 'uuid';
-
 class CategoryService {
   constructor() {
-    this.categories = new Map();
+    this.categories = [];
+    this.publishings = [];
+    this.nextCategoryId = 1;
+    this.nextPublishingId = 1;
   }
 
-  addCategory(categoryName) {
-    const categoryId = uuidv4();
-    const newCategory = { id: categoryId, name: categoryName };
-    this.categories.set(categoryId, newCategory);
+  addCategory(title, image, category) {
+    const categoryId = this.nextCategoryId++;
+    const newCategory = { id: categoryId, title, image, category };
+    this.categories.push(newCategory);
     return newCategory;
   }
 
   getAllCategories() {
-    return Array.from(this.categories.values());
+    return this.categories;
   }
 
   getCategoryById(categoryId) {
-    return this.categories.get(categoryId);
+    return this.categories.find(category => category.id === parseInt(categoryId));
   }
 
-  updateCategory(categoryId, updatedName) {
-    const category = this.getCategoryById(categoryId);
-    if (!category) {
-      throw new Error('Category not found');
-    }
-    const updatedCategory = { ...category, name: updatedName };
-    this.categories.set(categoryId, updatedCategory);
-    return updatedCategory;
+  addPublishing(title, image, publishing) {
+    const publishingId = this.nextPublishingId++;
+    const newPublishing = { id: publishingId, title, image , publishing};
+    this.publishings.push(newPublishing);
+    return newPublishing;
   }
 
-  deleteCategory(categoryId) {
-    const category = this.getCategoryById(categoryId);
-    if (!category) {
-      throw new Error('Category not found');
-    }
-    this.categories.delete(categoryId);
+  getAllPublishings() {
+    return this.publishings;
+  }
+
+  getPublishingById(publishingId) {
+    return this.publishings.find(publishing => publishing.id === parseInt(publishingId));
   }
 }
 
