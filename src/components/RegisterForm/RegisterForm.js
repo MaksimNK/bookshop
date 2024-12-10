@@ -5,12 +5,12 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { register } from "../../features/auth/authslice";
 
-export const RegisterForm = (props) => {
+export const RegisterForm = ({toggleForm}) => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { status, user } = useSelector((state) => state.auth);
+  const { status, user, error} = useSelector((state) => state.auth);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -34,7 +34,7 @@ export const RegisterForm = (props) => {
 
   useEffect(()=> {
     if(status === 'succeeded') {
-      navigate('/')
+      navigate('/profile');
     }
   }, [status])
 
@@ -97,16 +97,22 @@ export const RegisterForm = (props) => {
           />
         </div>
 
-        <div className={styles.inputGroup}>
-          <Link to="/">
-            <p>Уже есть аккаунт? Войти</p>
-          </Link>
-        </div>
+
+        {status === "failed" && error && (
+        <p className={styles.errorMessage}>{error}</p>
+      )}
+
 
         <button type="submit" className={styles.button}>
           Зарегистрироваться
         </button>
 
+      <div className={styles.inputGroup}>
+        <p onClick={toggleForm} className={styles.toggleLink}>
+          Уже есть аккаунт? Войти
+        </p>
+      </div>
+      
         <div className={styles.socialLogin}>
           <button type="button" className={styles.socialButton}>
             Google

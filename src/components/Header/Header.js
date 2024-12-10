@@ -37,7 +37,7 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              {isAuthenticated ? (
+            {isAuthenticated ? (
                 <Link to="/profile">
                   <PiUserCircleDuotone className={styles.icon} />
                 </Link>

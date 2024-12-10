@@ -4,25 +4,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../features/auth/authslice";
 import { useNavigate } from "react-router-dom";
 
-export const LoginForm = ({ onSubmit, toggleForm }) => {
-
+export const LoginForm = ({ toggleForm }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { status, user } = useSelector((state) => state.auth);
+  const { status, user, error } = useSelector((state) => state.auth);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     dispatch(login({ email, password }));
   };
+
   useEffect(() => {
-    if(status === 'succeeded') {
-      navigate('/');
+    if (status === "succeeded") {
+      navigate("/profile");
     }
-  }, [status, user]);
+  }, [status, user, navigate]);
 
   return (
     <form onSubmit={handleLoginSubmit} className={styles.login}>
@@ -46,6 +46,10 @@ export const LoginForm = ({ onSubmit, toggleForm }) => {
           className={styles.input}
         />
       </div>
+
+      {status === "failed" && error && (
+        <p className={styles.errorMessage}>{error}</p>
+      )}
 
       <div className={styles.inputGroup}>
         <p>Забыли пароль?</p>
