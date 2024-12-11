@@ -109,6 +109,60 @@ paths:
                       type: string
                     author:
                       type: string
+    post:
+      summary: Add a new book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                author:
+                  type: string
+                series:
+                  type: string
+                publishing:
+                  type: string
+                image:
+                  type: string
+                isbn:
+                  type: string
+                ageLimit:
+                  type: string
+                originalTitle:
+                  type: string
+                coverType:
+                  type: string
+                pages:
+                  type: integer
+                weight:
+                  type: string
+                thickness:
+                  type: string
+                format:
+                  type: string
+                paperMaterial:
+                  type: string
+                readingTime:
+                  type: string
+                description:
+                  type: string
+                category:
+                  type: string
+                price:
+                  type: number
+              required:
+                - title
+                - author
+                - price
+      responses:
+        201:
+          description: Book added successfully
+        400:
+          description: Bad request
 
   /books/{id}:
     get:
@@ -146,6 +200,41 @@ paths:
                   type: string
                 author:
                   type: string
+                series:
+                  type: string
+                publishing:
+                  type: string
+                image:
+                  type: string
+                isbn:
+                  type: string
+                ageLimit:
+                  type: string
+                originalTitle:
+                  type: string
+                coverType:
+                  type: string
+                pages:
+                  type: integer
+                weight:
+                  type: string
+                thickness:
+                  type: string
+                format:
+                  type: string
+                paperMaterial:
+                  type: string
+                readingTime:
+                  type: string
+                description:
+                  type: string
+                category:
+                  type: string
+                price:
+                  type: number
+              required:
+                - title
+                - author
       responses:
         200:
           description: Book updated successfully
@@ -173,6 +262,33 @@ paths:
       responses:
         200:
           description: A list of users
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                surname:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - name
+                - surname
+                - email
+                - password
+      responses:
+        201:
+          description: User created successfully
+        400:
+          description: Bad request
 
   /users/{id}:
     get:
@@ -231,8 +347,124 @@ paths:
         404:
           description: User not found
 
-securitySchemes:
-  BearerAuth:
-    type: http
-    scheme: bearer
-    bearerFormat: JWT
+  catalog/categories:
+    post:
+      summary: Add a new category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                image:
+                  type: string
+              required:
+                - name
+      responses:
+        201:
+          description: Category added successfully
+        400:
+          description: Bad request
+
+    get:
+      summary: Get all categories
+      responses:
+        200:
+          description: A list of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    image:
+                      type: string
+
+  catalog/categories/{id}:
+    get:
+      summary: Get category by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Category ID
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Category details
+        404:
+          description: Category not found
+
+  catalog/categories/bulk:
+    post:
+      summary: Add multiple categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                categories:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+  catalog/publishings:
+    get:
+      summary: Get all publishings
+      responses:
+        200:
+          description: A list of publishings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publishings:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        image:
+                          type: string
+                        publishing:
+                          type: string
+      post:
+      summary: Add a new publishing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                image:
+                  type: string
+                publishing:
+                  type: string
+              required:
+                - title
+                - image
+                - publishing
+      responses:
+        201:
+          description: Publishing added successfully
+        400:
+          description: Bad request
+
